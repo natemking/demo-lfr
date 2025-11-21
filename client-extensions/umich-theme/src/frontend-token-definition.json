@@ -5,6 +5,228 @@
 				{
 					"frontendTokens": [
 						{
+							"defaultValue": "hsl(209 100% 5%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-primary-darken-2",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-primary-darken-2"
+								}
+							],
+							"name": "colorBrandPrimaryDarken2",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(209 100% 10%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-primary-darken-1",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-primary-darken-1"
+								}
+							],
+							"name": "colorBrandPrimaryDarken1",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(209 100% 15%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-primary",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-primary"
+								}
+							],
+							"name": "colorBrandPrimary",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(209 100% 30%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-primary-lighten-1",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-primary-lighten-1"
+								}
+							],
+							"name": "colorBrandPrimaryLighten1",
+							"type": "String"
+						}
+					],
+					"label": "brand-primary",
+					"name": "brandPrimary"
+				},
+				{
+					"frontendTokens": [
+						{
+							"defaultValue": "hsl(48 100% 51%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-secondary",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-secondary"
+								}
+							],
+							"name": "colorBrandSecondary",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(48 100% 64%)",
+							"editorType": "ColorPicker",
+							"label": "color-brand-secondary-lighten-1",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "color-brand-secondary-lighten-1"
+								}
+							],
+							"name": "colorBrandSecondaryLighten1",
+							"type": "String"
+						}
+					],
+					"label": "brand-secondary",
+					"name": "brandSecondary"
+				},
+				{
+					"frontendTokens": [
+						{
+							"defaultValue": "hsl(0 0% 100%)",
+							"editorType": "ColorPicker",
+							"label": "white",
+							"mappings": [
+								{ "type": "cssVariable", "value": "white" }
+							],
+							"name": "white",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(0 0% 99%)",
+							"editorType": "ColorPicker",
+							"label": "Gray 50",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-50" }
+							],
+							"name": "gray50",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 97%)",
+							"editorType": "ColorPicker",
+							"label": "gray-100",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-100" }
+							],
+							"name": "gray100",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 92%)",
+							"editorType": "ColorPicker",
+							"label": "gray-200",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-200" }
+							],
+							"name": "gray200",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 85%)",
+							"editorType": "ColorPicker",
+							"label": "gray-300",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-300" }
+							],
+							"name": "gray300",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 70%)",
+							"editorType": "ColorPicker",
+							"label": "gray-400",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-400" }
+							],
+							"name": "gray400",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 55%)",
+							"editorType": "ColorPicker",
+							"label": "gray-500",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-500" }
+							],
+							"name": "gray500",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(210 10% 40%)",
+							"editorType": "ColorPicker",
+							"label": "gray-600",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-600" }
+							],
+							"name": "gray600",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(232 15% 30%)",
+							"editorType": "ColorPicker",
+							"label": "gray-700",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-700" }
+							],
+							"name": "gray700",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(232 15% 22%)",
+							"editorType": "ColorPicker",
+							"label": "gray-800",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-800" }
+							],
+							"name": "gray800",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(232 15% 18%)",
+							"editorType": "ColorPicker",
+							"label": "gray-900",
+							"mappings": [
+								{ "type": "cssVariable", "value": "gray-900" }
+							],
+							"name": "gray900",
+							"type": "String"
+						},
+						{
+							"defaultValue": "hsl(0 0% 0%)",
+							"editorType": "ColorPicker",
+							"label": "black",
+							"mappings": [
+								{ "type": "cssVariable", "value": "black" }
+							],
+							"name": "black",
+							"type": "String"
+						}
+					],
+					"label": "Gray Scale",
+					"name": "grayScale"
+				}
+			],
+			"label": "color-system",
+			"name": "colorSystem"
+		},
+		{
+			"frontendTokenSets": [
+				{
+					"frontendTokens": [
+						{
 							"defaultValue": "4px",
 							"editorType": "Length",
 							"label": "border-radius",
@@ -174,7 +396,7 @@
 				{
 					"frontendTokens": [
 						{
-							"defaultValue": "#3f3f3f",
+							"defaultValue": "hsl(209 100% 15%)",
 							"editorType": "ColorPicker",
 							"label": "background-color",
 							"mappings": [
@@ -224,7 +446,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#fff",
+							"defaultValue": "hsl(0 0% 100%)",
 							"editorType": "ColorPicker",
 							"label": "color",
 							"mappings": [
@@ -237,7 +459,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#1a1a1a",
+							"defaultValue": "hsl(209 100% 10%)",
 							"editorType": "ColorPicker",
 							"label": "hover-background-color",
 							"mappings": [
@@ -287,7 +509,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#fff",
+							"defaultValue": "hsl(0 0% 100%)",
 							"editorType": "ColorPicker",
 							"label": "hover-color",
 							"mappings": [
@@ -459,7 +681,7 @@
 				{
 					"frontendTokens": [
 						{
-							"defaultValue": "#fff",
+							"defaultValue": "hsl(48 100% 51%)",
 							"editorType": "ColorPicker",
 							"label": "background-color",
 							"mappings": [
@@ -497,7 +719,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#303030",
+							"defaultValue": "hsl(209 100% 15%)",
 							"editorType": "ColorPicker",
 							"label": "color",
 							"mappings": [
@@ -510,7 +732,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#fafafa",
+							"defaultValue": "hsl(48 100% 64%)",
 							"editorType": "ColorPicker",
 							"label": "hover-background-color",
 							"mappings": [

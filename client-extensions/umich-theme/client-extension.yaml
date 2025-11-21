@@ -8,5 +8,6 @@ umich-theme:
     clayURL: css/clay.css
     mainRTLURL: css/main_rtl.css
     mainURL: css/main.css
-    name: UMich Theme
+    frontendTokenDefinitionJSON: src/frontend-token-definition.json
+    name: UMich Theme CSS
     type: themeCSS
