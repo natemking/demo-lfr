@@ -1,12 +1,50 @@
+.section-header {
+	height: 56px;
+}
+
 .section-header .section-header-logo {
 	height: 36px;
 }
 
-.section-header .portlet {
-	margin: 0;
+.section-header .container {
+	gap: 2rem;
 }
 
-.section-header .navbar-nav .nav-link {
-	font-weight: 600;
-	padding: 0 1rem;
+.section-header .portlet {
+	height: 100%;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+}
+
+.navbar-nav {
+	gap: 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: white;
+}
+
+.personal-menu-dropdown .lexicon-icon,
+.personal-menu-dropdown .lexicon-icon-user {
+	display: none !important;
+}
+.personal-menu-dropdown .sticker,
+.personal-menu-dropdown .sticker-user-icon,
+.personal-menu-dropdown .sticker-circle,
+.personal-menu-dropdown .user-icon-color-4 {
+	background: none !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+
+.personal-menu-dropdown .sticker-overlay::before {
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	content: '\f2bd'; /* fa-circle-user */
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
 }

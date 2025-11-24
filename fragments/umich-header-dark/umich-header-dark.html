@@ -1,17 +1,26 @@
-<header class="bg-primary navbar navbar-dark py-4 section-header text-white">
-    <div class="container flex-column flex-lg-row justify-content-between text-break">
+<header class="bg-primary navbar navbar-dark section-header text-white">
+    <div class="container flex-column flex-lg-row justify-content-start text-break">
         <img alt="Logo Image" class="section-header-logo" data-lfr-editable-id="01-logo" data-lfr-editable-type="image"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnSURBVHgB7cwxEQAACAOxgn8fHB7wBiK6MHwEJKpnZUiZCAgIvgQHmksDKxJ1SeoAAAAASUVORK5CYII=" />
 
-        <div class="align-items-center d-flex flex-column flex-lg-row mt-3 mt-lg-0">
+        <div
+            class="align-items-center justify-content-between d-flex flex-column flex-lg-row h-100 my-auto flex-grow-1">
             <lfr-widget-nav></lfr-widget-nav>
 
-            <span class="ml-lg-3 mt-4 mt-lg-0">
-                <a class="btn btn-outline-light btn-sm" data-lfr-editable-id="03-link" data-lfr-editable-type="link"
-                    href="#" id="fragment-${fragmentEntryLinkNamespace}-03-link">
-                    Sign In
+            [#if !themeDisplay.isSignedIn()]
+            <div class="component-button text-break">
+                <a class="btn" data-lfr-editable-id="link" data-lfr-editable-type="link" href="/c/portal/login"
+                    id="fragment-${fragmentEntryLinkNamespace}-link">
+                    <span style="font-size: ${configuration.iconSize}">
+                        <i class="fa-solid fa-circle-user text-white" aria-hidden="true"></i>
+                    </span>
                 </a>
-            </span>
+            </div>
+            [#else]
+            <div class="user-menu">
+                [@liferay.user_personal_bar /]
+            </div>
+            [/#if]
         </div>
     </div>
 </header>
