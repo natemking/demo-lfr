@@ -1,0 +1,15 @@
+assemble:
+   - from: build/vite
+     into: static
+test-react-app:
+   cssURLs:
+       - assets/*.css
+   friendlyURLMapping: test-react-app 
+   htmlElementName: test-react-app 
+   instanceable: false
+   name: Test React App 
+   portletCategoryName: category.client-extensions
+   type: customElement
+   urls:
+       - assets/*.js
+   useESM: true
