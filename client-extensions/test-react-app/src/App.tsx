@@ -7,7 +7,8 @@ function App() {
 	const [count, setCount] = useState(0);
 
 	return (
-		<div className='bg-primary '>
+		<div className='bg-primary' id='test-react-app-root'>
+            <h1 className='text-secondary'>Updated 654</h1>
 			<div>
 				<a href='https://vite.dev' target='_blank'>
 					<img src={viteLogo} className='logo' alt='Vite logo' />
