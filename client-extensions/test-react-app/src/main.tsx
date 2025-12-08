@@ -9,6 +9,11 @@ import './index.css';
 
 const ELEMENT_ID = 'test-react-app';
 
+if (import.meta.env.DEV) {
+   import('umich-theme/main.css');
+   import('umich-theme/clay.css');
+}
+
 
 // Development mode - render directly to #root
 if (import.meta.env.DEV) {
