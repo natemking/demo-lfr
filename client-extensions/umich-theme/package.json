@@ -1,0 +1,8 @@
+{
+	"name": "umich-theme",
+	"version": "1.0.0",
+	"exports": {
+		"./main.css": "./build/buildTheme/css/main.css",
+		"./clay.css": "./build/buildTheme/css/clay.css"
+	}
+}

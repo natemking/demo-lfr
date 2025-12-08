@@ -12,4 +12,56 @@ buildscript {
 	}
 }
 
+// Liferay's workspace plugin scans for themes during configuration and attempts to parse
+// any package.json it finds as a Liferay theme (looking for liferayDesignPackMap, etc).
+// To use yarn workspaces for sharing theme files while maintaining compatibility with
+// Liferay's Gradle build:
+// 1. Hide the theme's package.json before the workspace plugin applies
+// 2. Let Gradle build without detecting the package.json
+// 3. After build completes, restore the theme's package.json
+// 4. Ensure the theme workspace is in root package.json's workspaces.packages array
+// 5. Run yarn install to sync the workspace configuration
+def themeWorkspace = 'client-extensions/umich-theme'
+def pkgJson = 'package.json'
+def themeDir = new File(rootDir, themeWorkspace)
+def themePkgJson = new File(themeDir, pkgJson)
+def hidden = new File(themeDir, '.package.json.hidden')
+
+// rename theme package.json temporarily 
+if (themePkgJson.exists()) {
+    themePkgJson.renameTo(hidden)
+}
+
+gradle.buildFinished {
+    // Restore theme package.json
+    if (hidden.exists()) {
+        hidden.renameTo(themePkgJson)
+    }
+    
+    // Add workspace entry back to root package.json if missing
+    def rootPkgJson = new File(rootDir, pkgJson)
+    if (rootPkgJson.exists()) {
+        def packageText = rootPkgJson.text
+        
+        // Parse JSON and check if workspace entry exists
+        def slurper = new groovy.json.JsonSlurper()
+        def packageJson = slurper.parseText(packageText)
+        
+
+        if (packageJson.workspaces?.packages instanceof List) {
+            if (!packageJson.workspaces.packages.contains(themeWorkspace)) {
+                packageJson.workspaces.packages.add(themeWorkspace)
+                
+                // Write back
+                def builder = new groovy.json.JsonBuilder(packageJson)
+                rootPkgJson.text = builder.toPrettyString()
+            }
+        }
+        
+        // Run yarn install if we added the workspace back
+            def proc = "yarn install".execute(null, rootDir)
+            proc.waitForProcessOutput(System.out, System.err)
+    }
+}
+
 apply plugin: "com.liferay.workspace"

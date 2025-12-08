@@ -6,6 +6,12 @@ import type { Root } from 'react-dom/client';
 import App from './App';
 import './index.css';
 
+// Only import theme CSS in development mode
+if (import.meta.env.DEV) {
+    import('umich-theme/main.css');
+    import('umich-theme/clay.css');
+}
+
 
 const ELEMENT_ID = 'test-react-app';
 
