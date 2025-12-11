@@ -2,6 +2,7 @@
     "private": true,
     "workspaces": {
         "packages": [
+            "client-extensions/shared",
             "client-extensions/test-react-app",
             "client-extensions/umich-theme"
         ]
