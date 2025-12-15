@@ -1,7 +1,12 @@
 {
   "name": "shared",
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "type": "module",
   "exports": {
-    "./liferay": "./liferay.ts"
+    "./liferay": "./liferay.ts",
+    "./utils": "./utils.ts"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
   }
 }

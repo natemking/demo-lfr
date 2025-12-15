@@ -1,26 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-// import { Liferay } from 'shared/liferay'
-
-// const api = async (url: string, options = {}) => {
-// 	return fetch(window.location.origin + '/' + url, {
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 			'x-csrf-token': Liferay.authToken,
-// 		},
-// 		...options,
-// 	});
-// };
+import { headlessApi } from 'shared/utils';
 
 
 function App() {
 	const [count, setCount] = useState(0);
 
+	useEffect(() => {
+		const getUserAccounts = async () => {
+			const res = await headlessApi(
+				'o/headless-admin-user/v1.0/user-accounts'
+			);
+			const data = await res.json();
+
+            console.log(data.items);
+			return data.items;
+		};
+
+		getUserAccounts();
+	}, []);
+
 	return (
 		<div className='bg-primary' id='test-react-app-root'>
-            <h1 className='text-secondary'>Updated 621</h1>
+			<h1 className='text-secondary'>Updated 621</h1>
 			<div>
 				<a href='https://vite.dev' target='_blank'>
 					<img src={viteLogo} className='logo' alt='Vite logo' />
