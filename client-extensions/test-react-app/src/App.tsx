@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import type { UserAccountType } from 'shared/types'
 import { headlessApi } from 'shared/utils';
 
 
 function App() {
 	const [count, setCount] = useState(0);
+    const [users, setUsers] = useState<UserAccountType[]>([]);
 
 	useEffect(() => {
 		const getUserAccounts = async () => {
@@ -16,6 +18,7 @@ function App() {
 			const data = await res.json();
 
             console.log(data.items);
+            setUsers(data.items)
 			return data.items;
 		};
 

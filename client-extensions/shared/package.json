@@ -4,6 +4,7 @@
   "type": "module",
   "exports": {
     "./liferay": "./liferay.ts",
+    "./types": "./types/index.ts",
     "./utils": "./utils.ts"
   },
   "devDependencies": {
