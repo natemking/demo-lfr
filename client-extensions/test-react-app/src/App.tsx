@@ -2,24 +2,31 @@ import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import type { UserAccountType } from 'shared/types'
+import type { UserAccountType } from 'shared/types';
 import { headlessApi } from 'shared/utils';
-
 
 function App() {
 	const [count, setCount] = useState(0);
-    const [users, setUsers] = useState<UserAccountType[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const [users, setUsers] = useState<UserAccountType[]>([]);
 
 	useEffect(() => {
-		const getUserAccounts = async () => {
-			const res = await headlessApi(
-				'o/headless-admin-user/v1.0/user-accounts'
-			);
-			const data = await res.json();
+		const getUserAccounts = async (): Promise<void> => {
+			try {
+				setIsLoading(true);
+				const res = await headlessApi(
+					'o/headless-admin-user/v1.0/user-accounts'
+				);
+				const data = await res.json();
 
-            console.log(data.items);
-            setUsers(data.items)
-			return data.items;
+				if (data.items) {
+					setUsers(data.items);
+				}
+			} catch (error) {
+				console.error('error:', error);
+			} finally {
+				setIsLoading(false);
+			}
 		};
 
 		getUserAccounts();
@@ -45,9 +52,23 @@ function App() {
 				<button onClick={() => setCount((count) => count + 1)}>
 					count is {count}
 				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
+
+				{isLoading ? (
+					<div>Loading...</div>
+				) : (
+					<div className='users-list'>
+						<h2>Liferay Headless API User List</h2>
+						{users.length ? (
+							<ol>
+								{users.map((user) => (
+									<li>{user.name} - {user.emailAddress}</li>
+								))}
+							</ol>
+						) : (
+							<p>No Users Found. Are you logged in?</p>
+						)}
+					</div>
+				)}
 			</div>
 			<p className='text-secondary'>
 				Click on the Vite and React logos to learn more
